@@ -1,6 +1,8 @@
 {
     "files.associations": {
         "execution": "cpp",
-        "iostream": "cpp"
+        "iostream": "cpp",
+        "ios": "cpp",
+        "string": "cpp"
     }
 }
