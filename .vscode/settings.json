@@ -3,6 +3,7 @@
         "execution": "cpp",
         "iostream": "cpp",
         "ios": "cpp",
-        "string": "cpp"
+        "string": "cpp",
+        "sstream": "cpp"
     }
 }
