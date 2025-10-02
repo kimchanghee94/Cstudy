@@ -5,6 +5,7 @@ using namespace std;
 int di[]={1,-1,0}, dj[]={1,1,2};
 
 int main(){
+    ios::sync_with_stdio(0);cin.tie(0);cout.tie(0);
     int N,K; cin>>N>>K;
     int graph[MAX]={0};
     graph[N]=1;
