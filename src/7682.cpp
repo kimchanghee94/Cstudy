@@ -21,7 +21,7 @@ int main(void){
         if(str[0]!='.'&&str[0]==str[4]&&str[0]==str[8]) map[str[0]]++;
         if(str[2]!='.'&&str[2]==str[4]&&str[2]==str[6]) map[str[2]]++;
 
-        if(map.size()==1 && ((map['O'] && xcnt==ocnt) || (map['X'] && (xcnt==ocnt+1)))) cout<<"valid\n";
+        if(map.size()==1 && ((map['O'] && xcnt==ocnt) || (map['X'] && xcnt==ocnt+1))) cout<<"valid\n";
         else if(map.size()==0 && xcnt==5 && ocnt==4) cout<<"valid\n";
         else cout<<"invalid\n";
     }
