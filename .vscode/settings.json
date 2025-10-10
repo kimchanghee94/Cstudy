@@ -9,6 +9,7 @@
         "stack": "cpp",
         "list": "cpp",
         "unordered_set": "cpp",
-        "__tree": "cpp"
+        "__tree": "cpp",
+        "algorithm": "cpp"
     }
 }
