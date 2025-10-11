@@ -1,40 +1,23 @@
-#include <iostream>
-#include <algorithm>
-#include <vector>
-using namespace std;
-
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
 #define MAX 201
-vector<int> v[MAX];
-int flag[MAX];
-
-bool dfs(int s, int e){
-    if(flag[s]==1) return false;
-    if(s==e) return true;
-    flag[s]=1;
-    for(int i=0; i<v[s].size(); i++){
-        int n=v[s][i];
-        if(dfs(n,e)) return true;
-    }
-    return false;
-}
-
+int p[MAX];
+int find(int s){return p[s]==s ? s : p[s]=find(p[s]);}
+void unite(int s, int e){p[find(s)]=find(e);}
 int main(){
-    ios::sync_with_stdio(0);cin.tie(0);cout.tie(0);
-    int N,M; cin>>N>>M;
+    int N,M; scanf("%d%d",&N,&M);
+    for(int i=1;i<=N;i++) p[i]=i;
     for(int i=1;i<=N;i++) for(int j=1;j<=N;j++){
-        int val; cin>>val;
-        if(val) v[i].push_back(j);
+        int val; scanf("%d",&val);
+        if(val) unite(i,j);
     }
-
-    int s; cin>>s;
-    for(int i=1; i<M; i++){
-        int e; cin>>e;
-        fill(flag, flag+MAX, 0);
-        if(!dfs(s,e)) {
-            cout<<"NO";
+    int s; scanf("%d",&s);
+    for(int i=1;i<M;i++){
+        int e; scanf("%d",&e);
+        if(find(s)!=find(e)){
+            printf("NO");
             return 0;
         }
-        s=e;
     }
-    cout<<"YES";
+    printf("YES");
 }
